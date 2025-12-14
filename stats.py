@@ -13,3 +13,14 @@ def character_count(text):
         else:
             Characters[i] += 1
     return Characters
+def sort_on(items):
+    return items["count"]
+def listofdic(texts):
+    output = []
+    Thelist = character_count(texts)
+    n = 0
+    for k,v in Thelist.items():
+        output.insert(n,{"char":k,"count":v})
+        n += 1
+    output.sort(reverse=True, key=sort_on)
+    return output
